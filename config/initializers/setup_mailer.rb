@@ -5,7 +5,7 @@ if Rails.env.development?
     :port           => '587',
     :authentication => :plain,
     :user_name      => "app22476060@heroku.com",
-    :password       => "your Sendgrid password",
+    :password       => "k9x88qxz",
     :domain         => 'heroku.com',
     :enable_starttls_auto => true
   }
