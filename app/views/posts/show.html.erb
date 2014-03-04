@@ -13,5 +13,7 @@
     <% if can? :edit, @post %>
       <%= link_to "Edit", edit_topic_post_path(@topic,@post), class: 'btn btn-large btn-block' %>
     <% end %>
+        <%= image_tag(post.image.thumb.url) if post.image? %>
+  <% end %>
   </div>
 </div>
