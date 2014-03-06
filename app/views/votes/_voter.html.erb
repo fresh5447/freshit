@@ -2,6 +2,6 @@
 <div class="vote-arrows pull-left">
   <div><%= link_to " ", topic_post_up_vote_path(topic, post), class: 'icon-thumbs-up' %></div>
   <div><strong><%= post.points %></strong></div>
-  <div><%= link_to " ", topic_post_down_vote_path(topics,post), class: 'icon-thumbs-down' %></div>
+  <div><%= link_to " ", topic_post_down_vote_path(topic, post), class: 'icon-thumbs-down' %></div>
 </div>
 <% end %>
