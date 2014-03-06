@@ -17,7 +17,7 @@ class VotesController < ApplicationController
     if @vote # if it exists, update it
        @vote.update_attribute(:value, new_value)
     else # create it
-       @vote = current_user.votes.create(value:, new_value, post: @post)
+       @vote = current_user.votes.create(value: new_value, post: @post)
     end
     redirect_to :back
   end

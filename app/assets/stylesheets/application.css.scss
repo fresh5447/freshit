@@ -1,4 +1,6 @@
+@import "bootstrap-custom";
 @import "bootstrap";
+
 
 .user-info {
   margin-top: 9px;
@@ -11,4 +13,8 @@
 .vote-arrows {
   width: 40px;
   text-align: center;
+}
+
+.voted {
+  opacity: 0.5;
 }
