@@ -22,3 +22,24 @@
     <% end %>
   </div>
 </div>
+<script> 
+
+$(document).ready(function (){
+    // track a client-side event using the Blocmetrics analytics service
+  var _bm_event = {
+    name: "Page Views",
+    application: "Bloccit",
+    topic_name: "<%= @topic.name %>",
+    app_user: "<%= current_user ? current_user.id : 0 %>", // --> where 0 represents non-user activity
+    app_owner: "douglaswalter2@gmail.com" // admin, general email to synch app with Blocmetrics view for app_owner  
+  }
+
+  var _bm_request = new XMLHttpRequest();
+  _bm_request.open("POST", "http://collier-blocmetrics.herokuapp.com/events", true);
+  _bm_request.setRequestHeader('Content-Type', 'application/json');
+  _bm_request.onreadystatechange = function() {
+    // this function runs when the Ajax request changes state.
+    // https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
+  };
+  _bm_request.send(JSON.stringify(_bm_event));
+}());</script>
