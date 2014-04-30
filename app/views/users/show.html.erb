@@ -22,6 +22,7 @@
     <ul class="nav nav-tabs">
       <li class="active"><a href="#posts" data-toggle="tab">Posts</a></li>
       <li><a href="#comments" data-toggle="tab">Comments</a></li>
+      <li><a href="#favorites" data-toggle="tab">Favorites</a></li>
     </ul>
     <div class="tab-content">
       <div class="tab-pane active" id="posts">
@@ -29,6 +30,9 @@
       </div>
       <div class="tab-pane" id="comments">
         <%= render @user.comments %>
+      </div>
+      <div class="tab-pane" id="favorites">
+        <%= render partial: "favorites/user_favorite", collection: @user.favorites %>
       </div>
     </div>
   </div>

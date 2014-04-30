@@ -11,14 +11,17 @@
         </small>
     <p><%= markdown @post.body %></p>
   </div>
-  <h2><%= @comments.count %> Comments</h2>
-
+  <h2 class="js-comments-count"><%= @comments.count %> Comments</h2>
+  <div class="js-comments">
     <%= render @comments %>
+  </div>
 
     <% if can? :create, Comment %>
       <hr/>
       <h4>New Comment</h4>
-      <%= render partial: 'comments/form', locals: { topic: @topic, post: @post, comment: @comment } %>
+      <div class="js-new-comment">
+        <%= render partial: 'comments/form', locals: { topic: @topic, post: @post, comment: @comment } %>
+      </div>
     <% end %>
   <div class="span4">
     <% if can? :edit, @post %>
