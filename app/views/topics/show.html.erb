@@ -20,3 +20,32 @@
     <% end %> 
   </div>
 </div>
+
+<% content_for :page_scripts do %>
+  <script> 
+
+  $(document).ready(function (){
+    console.log("Loading script....");
+      // track a client-side event using the Blocmetrics analytics service
+    var _bm_event = {
+      name: "Page Views",
+      application: "Bloccit",
+      topic_name: "<%= @topic.name %>",
+      app_user: "<%= current_user ? current_user.id : 0 %>", // --> where 0 represents non-user activity
+      app_owner: "douglaswalter2@gmail.com" // admin, general email to synch app with Blocmetrics view for app_owner  
+    }
+
+    console.log("_bm_event created");
+
+    var _bm_request = new XMLHttpRequest();
+    _bm_request.open("POST", "http://freshimetrics.herokuapp.com/events.json", true);
+    _bm_request.setRequestHeader('Content-Type', 'application/json');
+    _bm_request.onreadystatechange = function() {
+      // this function runs when the Ajax request changes state.
+      // https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
+      console.log("Freshimetrics event received!");
+    };
+    _bm_request.send(JSON.stringify(_bm_event));
+    console.log("request sent!");
+  }());</script>
+<% end %>

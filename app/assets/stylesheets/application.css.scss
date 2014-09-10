@@ -1,3 +1,4 @@
+
 @import "bootstrap-custom";
 @import "bootstrap";
 
@@ -27,4 +28,29 @@
   clear: both;
   padding-top: 20px;
   color: red;
+}
+
+.media  {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1 {
+  font-family: 'Permanent Marker', cursive;
+}
+
+h2 {
+  font-family: 'Permanent Marker', cursive;
+  color: white;
+}
+p {
+  font-family: 'Permanent Marker', cursive;
+}
+
+a {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.sub-p{
+  font-family: 'Permanent Marker', cursive;
+  color: white;
 }
