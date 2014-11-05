@@ -4,7 +4,7 @@ class Post < ActiveRecord::Base
   has_many :favorites, dependent: :destroy
   belongs_to :user
   belongs_to :topic
-  attr_accessible :body, :title, :topic, :image
+  attr_accessible :body, :title, :topic, :image, :link
   after_create :create_vote
 
   mount_uploader :image, ImageUploader
@@ -13,6 +13,7 @@ class Post < ActiveRecord::Base
   scope :visible_to, lambda { |user| user ? scoped : joins(:topic).where('topics.public' => true) }
 
   validates :title, length: { minimum: 5}, presence: true
+  validates :link, length: { minimum: 5}, presence: true
   validates :body, length: { minimum: 20}, presence: true
   validates :topic, presence: true
   validates :user, presence: true

@@ -14,6 +14,10 @@
     <div class="controls">
       <%= f.text_field :title %>
     </div>
+    <%= f.label :link, class: 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :link %>
+    </div>
   <% end %>
     
     <%= image_tag(post.image.thumb.url) if post.image? %>

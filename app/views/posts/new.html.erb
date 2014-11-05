@@ -4,10 +4,9 @@
   <div class="span6">
     <p>Guidelines for new posts:</p>
     <ul>
-      <li>Make sure content is appropriate.</li>
-      <li>Blah blah blah</li>
-      <li>Blah blah blah</li>
-      <li>Blah blah blah</li>
+      <li>Give the source a title</li>
+      <li>Provide a link</li>
+      <li>Enter a short description</li>
     </ul>
   </div>
   <div class="span6">
@@ -16,6 +15,9 @@
         <%= f.label :title, class: 'control-label' %>
         <div class="controls">
           <%= f.text_field :title %>
+        </div>
+        <div class="controls">
+          <%= f.text_field :link %>
         </div>
       </div>
       <div class="control-group">
