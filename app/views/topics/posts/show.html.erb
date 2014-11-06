@@ -6,7 +6,7 @@
     <h3><%= markdown @post.title %></h3>
 
     <p><%= markdown @post.body %></p>
-    <p><%= link_to @post.link%></p>
+    <p><%= link_to @post.link, @post.link %></p>
     
 
             <%= render partial: 'favorites/favorite', locals: { topic: @topic, post: @post } %>

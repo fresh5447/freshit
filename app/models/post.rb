@@ -6,6 +6,7 @@ class Post < ActiveRecord::Base
   belongs_to :topic
   attr_accessible :body, :title, :topic, :image, :link
   after_create :create_vote
+  before_save :prepend_link
 
   mount_uploader :image, ImageUploader
 
@@ -38,6 +39,10 @@ class Post < ActiveRecord::Base
   end
 
   private
+
+  def prepend_link
+    self.link = "http://#{link}" unless link.starts_with?('http://', 'https://')
+  end
 
   def create_vote
     self.user.votes.create(value: 1, post: self)
