@@ -12,49 +12,16 @@
   </head>
   <body>
  <% if current_user %>   
-  <nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="btn btn-primary" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Navigation</span>
-        </button>
-      
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><li><%= link_to "Topics", topics_path %></li>
-        <li class="active"><li><%= link_to "Popular", posts_path %></li>
-        <li class="active"><li><%= link_to "Users", users_path %></li>
-        <li class="active"><li><%= link_to "About", about_path %></li>
-    
-      </ul>
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="El Searcho">
-        </div>
-        <button type="submit" class="btn btn-default">Search</button>
-      </form>
-      
-    </div>
-  </div>
-</nav>
-<% end %>
+  <%= render partial: 'partials/nav-bar' %>
+ <% end %>
 
 
 
 
     <div class="pull-right user-info">
           <% if current_user %>
-            <%= image_tag(current_user.avatar.tiny.url) if current_user.avatar? %>
-            Hello <%= link_to (current_user.name || current_user.email), current_user %>!
-            <%= link_to edit_user_registration_path, class: 'btn btn-mini' do %>
-             <i class="icon-user"> </i>
-            <% end %>
-            <%= link_to destroy_user_session_path, method: :delete, class: 'btn btn-mini' do %>
-             <i class="icon-share-alt"> </i>
+            <%= link_to destroy_user_session_path, method: :delete, class: 'btn btn-large' do %>
+             Logout
            <% end %>
            <% else %>
              <%= link_to "Sign In", new_user_session_path %> or 
