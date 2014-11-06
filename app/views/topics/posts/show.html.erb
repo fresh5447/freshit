@@ -4,12 +4,14 @@
   <div class="span8">
     <%= render partial: 'votes/voter', locals: { topic: @topic, post: @post } %>
     <h1><%= markdown @post.title %></h1>
-        <small>
+
+    <p><%= markdown @post.body %></p>
+            <%= render partial: 'favorites/favorite', locals: { topic: @topic, post: @post } %>
+            <small>
            <%= image_tag(@post.user.avatar.tiny.url) if @post.user.avatar? %>
             submitted <%= time_ago_in_words(@post.created_at) %> ago by 
               <%= @post.user.name %>
         </small>
-    <p><%= markdown @post.body %></p>
   </div>
   <h2 class="js-comments-count"><%= @comments.count %> Comments</h2>
   <div class="js-comments">
@@ -24,6 +26,7 @@
       </div>
     <% end %>
   <div class="span4">
+
     <% if can? :edit, @post %>
       <%= link_to "Edit", edit_topic_post_path(@topic,@post), class: 'btn btn-large btn-block' %>
     <% end %>
@@ -38,6 +41,6 @@
           <%= pluralize(@post.down_votes, 'down vote') %>
         </small>
     </div>
-    <%= render partial: 'favorites/favorite', locals: { topic: @topic, post: @post } %>
+
   </div>
 </div>
