@@ -1,29 +1,21 @@
 <div class="container">
 <h1>Topics</h1><br>
 
-<div class="row">
-  <div class="col-md-4 .col-md-offset-4 col-sm-4 .col-sm-offset-4 col-lg-4 .col-lg-offset-4">
-    <% @topics.each do |topic| %>
-      <div class="media">
-        <div class="media-body">
-          <h4 class="media-heading">
-            <%= link_to topic.name, topic %>
-          </h4>
-          <p>
-            <%= topic.description %>
-          </p>
-        </div>
-      </div>
-    <% end %>
-    <%= will_paginate @topics %>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <% @topics.each do |topic| %>
+      <h3 class="panel-title"> <%= link_to topic.name, topic %></h3>
+    </div>
+    <div class="panel-body">
+      <%= topic.description %>
+      <% end %>
+    </div>
   </div>
-  <div class="span4">
 
-      <%= link_to "New Topic", new_topic_path, class: 'btn btn-large btn-block' %>
+    <%= will_paginate @topics %><br>
+    <%= link_to "New Topic", new_topic_path, class: 'btn btn-large' %>
+</div>
 
-  </div>
-</div>
-</div>
 
 
 
