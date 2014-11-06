@@ -37,3 +37,4 @@ gem 'figaro'
 gem 'will_paginate', '~> 3.0'
 gem 'omniauth-facebook'
 gem 'font-awesome-sass'
+gem "friendly_id", "~> 3.3.0"

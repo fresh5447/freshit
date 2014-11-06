@@ -1,18 +1,19 @@
 <h1><%= @topic.name %></h1>
 
+
 <% if can? :update, @topic %>
   <%= link_to "Edit Topic", edit_topic_path, class: 'btn btn-primary btn-mini' %>
 <% end %>
 
 <div class="row">
-  <div class="span8">
+  <div class="col-md-4 .col-md-offset-4 col-sm-4 .col-sm-offset-4 col-lg-4 .col-lg-offset-4">
     <p class="lead"><%= @topic.description %></p>
     <%= render @posts %>
     <%= will_paginate @posts %>
   </div>
   <div class="span4">
     <% if can? :create, Post %>
-      <%= link_to "New Post", new_topic_post_path(@topic), class: 'btn btn-large btn-block' %>
+      <%= link_to "New Resource", new_topic_post_path(@topic), class: 'btn btn-large btn-block' %>
     <% end %>
 
     <% if can? :destroy, @topic %>
