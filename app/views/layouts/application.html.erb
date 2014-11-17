@@ -47,8 +47,9 @@
           <%= flash[:alert] %>
         </div>
       <% end %>
-
+      <div class="container">
       <%= yield %>
+      </div>
     </div>
    <%= javascript_include_tag "application" %>
    <%= yield :page_scripts %>
