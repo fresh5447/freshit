@@ -58,6 +58,7 @@ post_count = Post.count
     body: Faker::Lorem.paragraphs(rand(1..2)).join("\n"),
     post: p)
   c.update_attribute(:created_at, Time.now - rand(600..31536000))
+  end
 end
 
 puts "Seed finished"
