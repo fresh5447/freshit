@@ -1,18 +1,17 @@
-<div class="container">
+
 <h1>Topics</h1><br>
 
+  <% @topics.each do |topic| %>
   <div class="panel panel-primary">
     <div class="panel-heading">
-      <% @topics.each do |topic| %>
       <h3 class="panel-title"> <%= link_to topic.name, topic %></h3>
     </div>
     <div class="panel-body">
       <%= topic.description %>
-      <% end %>
+      
     </div>
-  </div>
-
+   </div>
+  <% end %>
     <%= will_paginate @topics %><br>
-    <%= link_to "New Topic", new_topic_path, class: 'btn btn-large' %>
-</div>
+    <%= link_to "New Topic", new_topic_path, class: 'btn btn-success' %>
  

@@ -1,7 +1,7 @@
 
 
 <div class="row">
-  <div class="span8">
+  <div>
     <%= render partial: 'votes/voter', locals: { topic: @topic, post: @post } %>
     <h1><%= markdown @post.title %></h1>
         <small>
@@ -20,7 +20,7 @@
       <h4>New Comment</h4>
       <%= render partial: 'comments/form', locals: { topic: @topic, post: @post, comment: @comment } %>
     <% end %>
-  <div class="span4">
+  <div>
     <% if can? :edit, @post %>
       <%= link_to "Edit", edit_topic_post_path(@topic,@post), class: 'btn btn-large btn-block' %>
     <% end %>

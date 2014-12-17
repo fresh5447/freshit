@@ -1,7 +1,5 @@
 
 @import "bootstrap-custom";
-@import "bootstrap";
-
 
 .user-info {
   margin-top: 9px;
@@ -27,7 +25,7 @@
 .js-comments-count {
   clear: both;
   padding-top: 20px;
-  color: red;
+  color: #2C3E50;
 }
 
 .media  {
@@ -58,7 +56,36 @@ a {
   text-align: center;
 }
 
-.container {
-  padding-left: 100px;
-  padding-right: 100px;
+.navbar .nav > li > a {
+  float: none;
+  padding: 10px 15px 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+.navbar .nav > li > .btn {
+  font-size: 16px;
+  margin: 4px;
+  background-color: #128f76;
+}
+
+.navbar .nav > li > a {
+  text-shadow: 0 0px 0 white;
+}
+
+.dropdown-toggle {
+  /*background-color: white; */
+  color: black;
+}
+
+.panel-primary {
+  width: 50%;
+}
+
+.panel-header p {
+  margin-left: 11px;
+}
+
+.votes-badge {
+  margin-left: 6px;
 }
